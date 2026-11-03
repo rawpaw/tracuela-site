@@ -1,0 +1,94 @@
+/*
+  One stylesheet for the three pages, so the privacy policy and the terms look like they
+  belong to the same product as the home page rather than to a legal department.
+
+  The palette is the app's own: the gunmetal ground the editor sits on, and the red that
+  picks CUE out of the wordmark.
+*/
+
+:root {
+  --ground: #353e43;
+  --raised: #3d474d;
+  --line: #4b565c;
+  --ink: #eef1f2;
+  --ink-dim: #a3b0b7;
+  --accent: #ba2126;
+  --link: #e8565b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 56px 20px 96px;
+  background: var(--ground);
+  color: var(--ink);
+  font: 16px/1.65 "Avenir Next", "Segoe UI", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+main { max-width: 68ch; margin: 0 auto; }
+
+/* The wordmark, set rather than drawn — the SVG is for the app's launch screen, and a
+   7KB image for eight letters would be the wrong trade on a page this size. */
+.wordmark {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  margin: 0 0 28px;
+}
+.cue { color: var(--accent); }
+
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  line-height: 1.1;
+  margin: 0 0 16px;
+  text-wrap: balance;
+}
+
+.lede { font-size: 1.08rem; color: var(--ink-dim); margin: 0; max-width: 60ch; }
+.lede strong { color: var(--ink); font-weight: 600; }
+
+section { margin-top: 56px; }
+
+h2 { font-size: 1.15rem; margin: 0 0 14px; }
+
+p, li { color: var(--ink); }
+
+.features { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
+.features li { color: var(--ink-dim); max-width: 62ch; }
+.features strong { color: var(--ink); font-weight: 600; }
+
+a { color: var(--link); }
+a:hover { color: #f27a7e; }
+
+/* Shared by the privacy policy and the terms. */
+.meta { font-size: 0.85rem; color: var(--ink-dim); margin: 0 0 32px; }
+.note { color: var(--ink-dim); }
+.panel {
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-top: 14px;
+}
+table { border-collapse: collapse; width: 100%; margin-top: 10px; font-size: 0.93rem; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--ink-dim); font-weight: 600; }
+/* Wide content scrolls inside its own box rather than making the page scroll sideways. */
+.wrap { overflow-x: auto; }
+
+footer {
+  margin-top: 72px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  font-size: 0.92rem;
+}
+footer nav { display: flex; flex-wrap: wrap; gap: 20px; }
+.fine { color: var(--ink-dim); font-size: 0.85rem; margin: 18px 0 0; }
+
+:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
