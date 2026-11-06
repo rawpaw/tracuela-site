@@ -53,6 +53,16 @@ section { margin-top: 56px; }
 
 h2 { font-size: 1.15rem; margin: 0 0 14px; }
 
+/* Sub-headings within a section — only the privacy policy needs them, where account
+   deletion has separate answers for bands and for recordings. Dimmed and smaller than h2
+   so the section still reads as one thing rather than three. */
+h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink-dim);
+  margin: 28px 0 10px;
+}
+
 p, li { color: var(--ink); }
 
 .features { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
